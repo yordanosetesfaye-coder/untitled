@@ -1,0 +1,2052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AfyaGuide Ethiopia | Health Information & Care</title>
+
+    <meta name="description"
+          content="AfyaGuide Ethiopia provides health information, healthcare resources, emergency guidance and health tips in English, Amharic and Afaan Oromo.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Ethiopic:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", "Noto Sans Ethiopic", sans-serif;
+            background: #f6fbfa;
+            color: #173b3a;
+            line-height: 1.6;
+            transition: 0.3s ease;
+        }
+
+        body.dark {
+            background: #081918;
+            color: #e8f8f6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button,
+        input {
+            font-family: inherit;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.94);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid #e3efed;
+        }
+
+        body.dark header {
+            background: rgba(8,25,24,0.94);
+            border-color: #173a38;
+        }
+
+        .navbar {
+            max-width: 1250px;
+            margin: auto;
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 22px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 22px;
+            font-weight: 800;
+            color: #087f72;
+        }
+
+        .logo-icon {
+            width: 43px;
+            height: 43px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, #0c9b89, #075e57);
+            color: white;
+            border-radius: 13px;
+            font-size: 22px;
+            box-shadow: 0 7px 20px rgba(8,127,114,0.25);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 14px;
+            font-weight: 600;
+            color: #426260;
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            color: #078878;
+        }
+
+        body.dark nav a {
+            color: #b7d2ce;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .language-select,
+        .theme-btn {
+            border: 1px solid #d6e7e4;
+            background: white;
+            color: #214b48;
+            padding: 10px 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        body.dark .language-select,
+        body.dark .theme-btn {
+            background: #102c2a;
+            color: #e5f5f2;
+            border-color: #28514d;
+        }
+
+        .menu-btn {
+            display: none;
+            border: none;
+            background: transparent;
+            font-size: 26px;
+            cursor: pointer;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            max-width: 1250px;
+            margin: auto;
+            padding: 85px 22px 70px;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-content .badge {
+            display: inline-flex;
+            padding: 8px 14px;
+            border-radius: 50px;
+            background: #e4f7f3;
+            color: #087d71;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        body.dark .hero-content .badge {
+            background: #123c38;
+            color: #75d8cc;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 6vw, 68px);
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            color: #079785;
+        }
+
+        .hero p {
+            max-width: 650px;
+            color: #5b7472;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        body.dark .hero p {
+            color: #a9c2bf;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 13px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            border: none;
+            border-radius: 12px;
+            padding: 14px 20px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .btn-primary {
+            background: #078f7f;
+            color: white;
+            box-shadow: 0 10px 25px rgba(7,143,127,0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            background: #06786c;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #087d71;
+            border: 1px solid #d8e9e6;
+        }
+
+        body.dark .btn-secondary {
+            background: #102c2a;
+            border-color: #28514d;
+            color: #83d9d0;
+        }
+
+        .hero-card {
+            min-height: 390px;
+            border-radius: 30px;
+            padding: 30px;
+            background:
+                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.4), transparent 20%),
+                linear-gradient(145deg, #0b9b88, #075c56);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(3,80,73,0.25);
+        }
+
+        .hero-card::before {
+            content: "";
+            position: absolute;
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            border: 35px solid rgba(255,255,255,0.09);
+            right: -90px;
+            bottom: -70px;
+        }
+
+        .heart {
+            width: 100px;
+            height: 100px;
+            background: rgba(255,255,255,0.13);
+            border-radius: 30px;
+            display: grid;
+            place-items: center;
+            font-size: 55px;
+            margin-bottom: 30px;
+        }
+
+        .hero-card h2 {
+            font-size: 29px;
+            margin-bottom: 10px;
+        }
+
+        .hero-card p {
+            color: rgba(255,255,255,0.82);
+            margin-bottom: 25px;
+        }
+
+        .health-status {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .status {
+            padding: 9px 13px;
+            border-radius: 30px;
+            background: rgba(255,255,255,0.12);
+            font-size: 13px;
+        }
+
+        /* ================= SEARCH ================= */
+
+        .search-area {
+            max-width: 950px;
+            margin: 0 auto 70px;
+            padding: 0 22px;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: white;
+            border: 1px solid #dceae8;
+            padding: 8px;
+            border-radius: 16px;
+            box-shadow: 0 15px 40px rgba(10,70,65,0.08);
+        }
+
+        body.dark .search-box {
+            background: #102c2a;
+            border-color: #28514d;
+        }
+
+        .search-box span {
+            padding-left: 15px;
+            font-size: 20px;
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 13px;
+            background: transparent;
+            color: inherit;
+            font-size: 15px;
+        }
+
+        .search-box button {
+            border: none;
+            background: #078f7f;
+            color: white;
+            border-radius: 11px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        /* ================= SECTIONS ================= */
+
+        section {
+            padding: 80px 22px;
+        }
+
+        .section-container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 45px;
+        }
+
+        .section-title small {
+            color: #078f7f;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(30px, 4vw, 43px);
+            margin: 8px 0 10px;
+        }
+
+        .section-title p {
+            color: #687f7c;
+        }
+
+        body.dark .section-title p {
+            color: #a6c0bc;
+        }
+
+        /* ================= QUICK CARDS ================= */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #e1ecea;
+            border-radius: 20px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        body.dark .card {
+            background: #102c2a;
+            border-color: #214743;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 18px 40px rgba(8,75,69,0.11);
+        }
+
+        .card-icon {
+            width: 53px;
+            height: 53px;
+            display: grid;
+            place-items: center;
+            background: #e8f8f5;
+            color: #078f7f;
+            border-radius: 15px;
+            font-size: 25px;
+            margin-bottom: 17px;
+        }
+
+        body.dark .card-icon {
+            background: #153c38;
+        }
+
+        .card h3 {
+            margin-bottom: 8px;
+            font-size: 19px;
+        }
+
+        .card p {
+            color: #6b817f;
+            font-size: 14px;
+        }
+
+        body.dark .card p {
+            color: #abc1be;
+        }
+
+        .card-link {
+            display: inline-block;
+            margin-top: 17px;
+            color: #078f7f;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        /* ================= EMERGENCY ================= */
+
+        .emergency {
+            background: #fff4f2;
+        }
+
+        body.dark .emergency {
+            background: #291614;
+        }
+
+        .emergency-box {
+            max-width: 1050px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .emergency h2 {
+            font-size: 38px;
+            margin-bottom: 13px;
+        }
+
+        .emergency p {
+            color: #6d7775;
+        }
+
+        body.dark .emergency p {
+            color: #cbb7b4;
+        }
+
+        .emergency-number {
+            background: white;
+            border-radius: 22px;
+            padding: 25px;
+            border: 1px solid #f0d7d3;
+        }
+
+        body.dark .emergency-number {
+            background: #351d1b;
+            border-color: #57312d;
+        }
+
+        .emergency-number h3 {
+            margin-bottom: 10px;
+        }
+
+        .emergency-number strong {
+            font-size: 31px;
+            color: #d74435;
+        }
+
+        .warning {
+            margin-top: 15px;
+            font-size: 13px;
+            color: #8c5a55 !important;
+        }
+
+        /* ================= TIPS ================= */
+
+        .tips {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .tip {
+            background: linear-gradient(145deg, #ffffff, #f1faf8);
+            padding: 23px;
+            border-radius: 18px;
+            border: 1px solid #dfecea;
+        }
+
+        body.dark .tip {
+            background: #102c2a;
+            border-color: #214743;
+        }
+
+        .tip-number {
+            color: #078f7f;
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .tip h3 {
+            margin: 8px 0;
+            font-size: 17px;
+        }
+
+        .tip p {
+            color: #6a817e;
+            font-size: 13px;
+        }
+
+        body.dark .tip p {
+            color: #abc1be;
+        }
+
+        /* ================= HEALTH CATEGORIES ================= */
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .category {
+            padding: 22px;
+            background: white;
+            border: 1px solid #e0ebe9;
+            border-radius: 18px;
+            text-align: center;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+
+        body.dark .category {
+            background: #102c2a;
+            border-color: #214743;
+        }
+
+        .category:hover {
+            transform: translateY(-5px);
+            border-color: #079785;
+        }
+
+        .category-icon {
+            font-size: 31px;
+            margin-bottom: 8px;
+        }
+
+        .category h3 {
+            font-size: 15px;
+        }
+
+        /* ================= FACILITIES ================= */
+
+        .facility-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .facility {
+            background: white;
+            border: 1px solid #e0ebe9;
+            border-radius: 20px;
+            padding: 23px;
+        }
+
+        body.dark .facility {
+            background: #102c2a;
+            border-color: #214743;
+        }
+
+        .facility-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 13px;
+        }
+
+        .facility-badge {
+            font-size: 11px;
+            background: #e5f7f2;
+            color: #078f7f;
+            padding: 5px 8px;
+            border-radius: 20px;
+            font-weight: 700;
+        }
+
+        .facility p {
+            color: #718682;
+            font-size: 13px;
+        }
+
+        body.dark .facility p {
+            color: #abc1be;
+        }
+
+        /* ================= MEDICINE ================= */
+
+        .medicine-box {
+            background: linear-gradient(135deg, #087f72, #064f4a);
+            color: white;
+            border-radius: 28px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .medicine-box p {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .medicine-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .medicine-item {
+            background: rgba(255,255,255,0.1);
+            padding: 14px;
+            border-radius: 12px;
+            font-size: 14px;
+        }
+
+        /* ================= DISCLAIMER ================= */
+
+        .disclaimer {
+            max-width: 1000px;
+            margin: 70px auto 0;
+            padding: 20px;
+            border-left: 4px solid #e3a329;
+            background: #fff8e8;
+            color: #675528;
+            border-radius: 8px;
+            font-size: 13px;
+        }
+
+        body.dark .disclaimer {
+            background: #2d2817;
+            color: #d8c88e;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #062f2c;
+            color: white;
+            padding: 60px 22px 25px;
+        }
+
+        .footer-grid {
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        footer h3 {
+            margin-bottom: 13px;
+        }
+
+        footer p,
+        footer a {
+            color: #a8c4c0;
+            font-size: 14px;
+            display: block;
+            margin-bottom: 7px;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .copyright {
+            max-width: 1150px;
+            margin: 40px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.12);
+            text-align: center;
+            color: #8eaaa6;
+            font-size: 13px;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 900px) {
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 76px;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 20px;
+                flex-direction: column;
+                align-items: flex-start;
+                border-bottom: 1px solid #ddd;
+            }
+
+            body.dark nav {
+                background: #081918;
+                border-color: #214743;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding-top: 55px;
+            }
+
+            .cards,
+            .facility-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tips,
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .emergency-box,
+            .medicine-box {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .navbar {
+                padding: 0 14px;
+            }
+
+            .logo {
+                font-size: 17px;
+            }
+
+            .logo-icon {
+                width: 38px;
+                height: 38px;
+            }
+
+            .language-select {
+                padding: 8px;
+                max-width: 105px;
+            }
+
+            .hero {
+                padding-left: 17px;
+                padding-right: 17px;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .hero-card {
+                min-height: 320px;
+            }
+
+            .cards,
+            .facility-grid,
+            .tips,
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 17px;
+            }
+
+            .search-area {
+                padding: 0 17px;
+            }
+
+            .search-box button {
+                padding: 11px;
+            }
+
+            .medicine-box {
+                padding: 27px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="navbar">
+
+        <a href="#home" class="logo">
+            <span class="logo-icon">⚕</span>
+            <span id="logoText">AfyaGuide Ethiopia</span>
+        </a>
+
+        <nav id="navigation">
+
+            <a href="#home" data-i18n="navHome">Home</a>
+            <a href="#care" data-i18n="navCare">Find Care</a>
+            <a href="#emergency" data-i18n="navEmergency">Emergency</a>
+            <a href="#medicine" data-i18n="navMedicine">Medicines</a>
+            <a href="#tips" data-i18n="navTips">Health Tips</a>
+
+        </nav>
+
+        <div class="nav-actions">
+
+            <select id="languageSelect" class="language-select">
+                <option value="en">🇬🇧 English</option>
+                <option value="am">🇪🇹 አማርኛ</option>
+                <option value="om">🌿 Afaan Oromoo</option>
+            </select>
+
+            <button class="theme-btn" id="themeBtn">🌙</button>
+
+            <button class="menu-btn" id="menuBtn">☰</button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<main id="home">
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="badge" data-i18n="badge">
+                🇪🇹 Health information for everyone
+            </span>
+
+            <h1>
+                <span data-i18n="heroLine1">Your health.</span>
+                <br>
+                <span data-i18n="heroLine2">Your information.</span>
+            </h1>
+
+            <p data-i18n="heroDescription">
+                Find health information, healthcare resources, emergency guidance,
+                medicines information and practical health tips in one place.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#care" class="btn btn-primary" data-i18n="findCare">
+                    Find Healthcare
+                </a>
+
+                <a href="#tips" class="btn btn-secondary" data-i18n="learnHealth">
+                    Learn About Health
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+            <div class="heart">❤</div>
+
+            <h2 data-i18n="heroCardTitle">
+                Health knowledge saves lives.
+            </h2>
+
+            <p data-i18n="heroCardText">
+                Learn, prevent, prepare and know when to seek professional care.
+            </p>
+
+            <div class="health-status">
+
+                <span class="status">🏥 Healthcare</span>
+                <span class="status">💡 Health Tips</span>
+                <span class="status">🚨 Emergency</span>
+                <span class="status">📚 Education</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SEARCH ================= -->
+
+    <div class="search-area">
+
+        <div class="search-box">
+
+            <span>🔎</span>
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search health information..."
+                data-placeholder="searchPlaceholder"
+            >
+
+            <button onclick="searchHealth()" data-i18n="search">
+                Search
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= QUICK ACCESS ================= -->
+
+    <section>
+
+        <div class="section-container">
+
+            <div class="section-title">
+
+                <small data-i18n="quickSmall">QUICK ACCESS</small>
+
+                <h2 data-i18n="quickTitle">
+                    What do you need?
+                </h2>
+
+                <p data-i18n="quickDescription">
+                    Quickly access the information and services you need.
+                </p>
+
+            </div>
+
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <div class="card-icon">🏥</div>
+
+                    <h3 data-i18n="card1Title">
+                        Find Healthcare
+                    </h3>
+
+                    <p data-i18n="card1Text">
+                        Explore hospitals, clinics, pharmacies and other healthcare services.
+                    </p>
+
+                    <a href="#care" class="card-link" data-i18n="explore">
+                        Explore →
+                    </a>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-icon">🚨</div>
+
+                    <h3 data-i18n="card2Title">
+                        Emergency Help
+                    </h3>
+
+                    <p data-i18n="card2Text">
+                        Find important emergency information and learn what to do in urgent situations.
+                    </p>
+
+                    <a href="#emergency" class="card-link" data-i18n="explore">
+                        Explore →
+                    </a>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-icon">💊</div>
+
+                    <h3 data-i18n="card3Title">
+                        Medicine Guide
+                    </h3>
+
+                    <p data-i18n="card3Text">
+                        Learn general information about medicines and medication safety.
+                    </p>
+
+                    <a href="#medicine" class="card-link" data-i18n="explore">
+                        Explore →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= HEALTH INFORMATION ================= -->
+
+    <section id="information">
+
+        <div class="section-container">
+
+            <div class="section-title">
+
+                <small data-i18n="healthSmall">HEALTH INFORMATION</small>
+
+                <h2 data-i18n="healthTitle">
+                    Learn about your health
+                </h2>
+
+                <p data-i18n="healthDescription">
+                    Simple educational information covering important areas of health.
+                </p>
+
+            </div>
+
+
+            <div class="category-grid">
+
+                <div class="category">
+                    <div class="category-icon">❤️</div>
+                    <h3 data-i18n="heartHealth">Heart Health</h3>
+                </div>
+
+                <div class="category">
+                    <div class="category-icon">🫁</div>
+                    <h3 data-i18n="lungHealth">Respiratory Health</h3>
+                </div>
+
+                <div class="category">
+                    <div class="category-icon">🧠</div>
+                    <h3 data-i18n="mentalHealth">Mental Wellbeing</h3>
+                </div>
+
+                <div class="category">
+                    <div class="category-icon">🥗</div>
+                    <h3 data-i18n="nutrition">Nutrition</h3>
+                </div>
+
+                <div class="category">
+                    <div class="category-icon">🦷</div>
+                    <h3 data-i18n="dental">Dental Health</h3>
+                </div>
+
+                <div class="category">
+                    <div class="category-icon">👁️</div>
+                    <h3 data-i18n="eye">Eye Health</h3>
+                </div>
+
+                <div class="category">
+                    <div class="category-icon">🧼</div>
+                    <h3 data-i18n="hygiene">Hygiene</h3>
+                </div>
+
+                <div class="category">
+                    <div class="category-icon">🦠</div>
+                    <h3 data-i18n="infection">Infections</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= EMERGENCY ================= -->
+
+    <section class="emergency" id="emergency">
+
+        <div class="emergency-box">
+
+            <div>
+
+                <h2 data-i18n="emergencyTitle">
+                    Need emergency help?
+                </h2>
+
+                <p data-i18n="emergencyText">
+                    In a serious or life-threatening emergency, contact your local
+                    emergency service or go to the nearest appropriate healthcare facility.
+                </p>
+
+            </div>
+
+
+            <div class="emergency-number">
+
+                <h3 data-i18n="emergencyNumberTitle">
+                    Emergency information
+                </h3>
+
+                <strong data-i18n="verifyNumber">
+                    Verify local emergency numbers
+                </strong>
+
+                <p class="warning" data-i18n="emergencyWarning">
+                    Emergency numbers can differ by location. Always verify the correct
+                    number for your area before relying on this information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= HEALTH TIPS ================= -->
+
+    <section id="tips">
+
+        <div class="section-container">
+
+            <div class="section-title">
+
+                <small data-i18n="tipsSmall">HEALTH TIPS</small>
+
+                <h2 data-i18n="tipsTitle">
+                    Small habits can make a difference
+                </h2>
+
+                <p data-i18n="tipsDescription">
+                    General health education for everyday life.
+                </p>
+
+            </div>
+
+
+            <div class="tips">
+
+                <div class="tip">
+                    <span class="tip-number">01</span>
+                    <h3 data-i18n="tip1Title">Wash your hands</h3>
+                    <p data-i18n="tip1Text">
+                        Regular hand hygiene can help reduce the spread of many infections.
+                    </p>
+                </div>
+
+                <div class="tip">
+                    <span class="tip-number">02</span>
+                    <h3 data-i18n="tip2Title">Eat a balanced diet</h3>
+                    <p data-i18n="tip2Text">
+                        A variety of nutritious foods can support overall health.
+                    </p>
+                </div>
+
+                <div class="tip">
+                    <span class="tip-number">03</span>
+                    <h3 data-i18n="tip3Title">Stay active</h3>
+                    <p data-i18n="tip3Text">
+                        Regular physical activity can support physical and mental wellbeing.
+                    </p>
+                </div>
+
+                <div class="tip">
+                    <span class="tip-number">04</span>
+                    <h3 data-i18n="tip4Title">Get enough sleep</h3>
+                    <p data-i18n="tip4Text">
+                        Healthy sleep supports learning, mood and general wellbeing.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= HEALTHCARE FINDER ================= -->
+
+    <section id="care">
+
+        <div class="section-container">
+
+            <div class="section-title">
+
+                <small data-i18n="careSmall">HEALTHCARE FINDER</small>
+
+                <h2 data-i18n="careTitle">
+                    Find healthcare services
+                </h2>
+
+                <p data-i18n="careDescription">
+                    This section can later connect to a real map and verified healthcare database.
+                </p>
+
+            </div>
+
+
+            <div class="facility-grid">
+
+                <div class="facility">
+
+                    <div class="facility-top">
+
+                        <h3>🏥 Hospital</h3>
+
+                        <span class="facility-badge">
+                            HEALTHCARE
+                        </span>
+
+                    </div>
+
+                    <p data-i18n="facilityText">
+                        Add verified hospital information, services,
+                        opening hours and location here.
+                    </p>
+
+                </div>
+
+
+                <div class="facility">
+
+                    <div class="facility-top">
+
+                        <h3>💊 Pharmacy</h3>
+
+                        <span class="facility-badge">
+                            MEDICINE
+                        </span>
+
+                    </div>
+
+                    <p data-i18n="facilityText">
+                        Add verified pharmacy information and location details here.
+                    </p>
+
+                </div>
+
+
+                <div class="facility">
+
+                    <div class="facility-top">
+
+                        <h3>🧪 Laboratory</h3>
+
+                        <span class="facility-badge">
+                            TESTING
+                        </span>
+
+                    </div>
+
+                    <p data-i18n="facilityText">
+                        Add verified laboratory information and available services here.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MEDICINE ================= -->
+
+    <section id="medicine">
+
+        <div class="section-container">
+
+            <div class="medicine-box">
+
+                <div>
+
+                    <h2 data-i18n="medicineTitle">
+                        Medicine Information
+                    </h2>
+
+                    <br>
+
+                    <p data-i18n="medicineText">
+                        Learn general information about medicines, medication safety
+                        and why professional advice is important.
+                    </p>
+
+                </div>
+
+
+                <div class="medicine-list">
+
+                    <div class="medicine-item" data-i18n="medicine1">
+                        💊 Learn what a medicine is generally used for
+                    </div>
+
+                    <div class="medicine-item" data-i18n="medicine2">
+                        ⚠️ Learn about common safety warnings
+                    </div>
+
+                    <div class="medicine-item" data-i18n="medicine3">
+                        👩‍⚕️ Ask a healthcare professional about personal treatment
+                    </div>
+
+                    <div class="medicine-item" data-i18n="medicine4">
+                        📖 Read reliable medicine information
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= DISCLAIMER ================= -->
+
+    <div class="disclaimer">
+
+        <strong data-i18n="disclaimerTitle">
+            ⚠️ Important:
+        </strong>
+
+        <span data-i18n="disclaimerText">
+            This website is for general health education and information.
+            It does not replace a doctor, pharmacist or other qualified healthcare professional.
+            For serious symptoms or emergencies, seek appropriate professional medical care.
+        </span>
+
+    </div>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <h3>⚕ AfyaGuide Ethiopia</h3>
+
+            <p data-i18n="footerDescription">
+                Making health information easier to understand and access.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3 data-i18n="footerExplore">Explore</h3>
+
+            <a href="#information" data-i18n="footerHealth">Health Information</a>
+            <a href="#care" data-i18n="footerCare">Healthcare Finder</a>
+            <a href="#medicine" data-i18n="footerMedicine">Medicine Guide</a>
+            <a href="#tips" data-i18n="footerTips">Health Tips</a>
+
+        </div>
+
+
+        <div>
+
+            <h3 data-i18n="footerLanguages">Languages</h3>
+
+            <p>English</p>
+            <p>አማርኛ</p>
+            <p>Afaan Oromoo</p>
+
+        </div>
+
+
+        <div>
+
+            <h3 data-i18n="footerImportant">Important</h3>
+
+            <p data-i18n="footerDisclaimer">
+                Health information should come from reliable sources and qualified professionals.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 AfyaGuide Ethiopia.
+        <span data-i18n="rights">Built for health education and community access.</span>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+    /* ============================================
+       TRANSLATIONS
+    ============================================ */
+
+    const translations = {
+
+        en: {
+
+            navHome: "Home",
+            navCare: "Find Care",
+            navEmergency: "Emergency",
+            navMedicine: "Medicines",
+            navTips: "Health Tips",
+
+            badge: "🇪🇹 Health information for everyone",
+
+            heroLine1: "Your health.",
+            heroLine2: "Your information.",
+
+            heroDescription:
+                "Find health information, healthcare resources, emergency guidance, medicines information and practical health tips in one place.",
+
+            findCare: "Find Healthcare",
+            learnHealth: "Learn About Health",
+
+            heroCardTitle: "Health knowledge saves lives.",
+            heroCardText:
+                "Learn, prevent, prepare and know when to seek professional care.",
+
+            searchPlaceholder: "Search health information...",
+            search: "Search",
+
+            quickSmall: "QUICK ACCESS",
+            quickTitle: "What do you need?",
+            quickDescription:
+                "Quickly access the information and services you need.",
+
+            card1Title: "Find Healthcare",
+            card1Text:
+                "Explore hospitals, clinics, pharmacies and other healthcare services.",
+
+            card2Title: "Emergency Help",
+            card2Text:
+                "Find important emergency information and learn what to do in urgent situations.",
+
+            card3Title: "Medicine Guide",
+            card3Text:
+                "Learn general information about medicines and medication safety.",
+
+            explore: "Explore →",
+
+            healthSmall: "HEALTH INFORMATION",
+            healthTitle: "Learn about your health",
+            healthDescription:
+                "Simple educational information covering important areas of health.",
+
+            heartHealth: "Heart Health",
+            lungHealth: "Respiratory Health",
+            mentalHealth: "Mental Wellbeing",
+            nutrition: "Nutrition",
+            dental: "Dental Health",
+            eye: "Eye Health",
+            hygiene: "Hygiene",
+            infection: "Infections",
+
+            emergencyTitle: "Need emergency help?",
+            emergencyText:
+                "In a serious or life-threatening emergency, contact your local emergency service or go to the nearest appropriate healthcare facility.",
+
+            emergencyNumberTitle: "Emergency information",
+            verifyNumber: "Verify local emergency numbers",
+
+            emergencyWarning:
+                "Emergency numbers can differ by location. Always verify the correct number for your area before relying on this information.",
+
+            tipsSmall: "HEALTH TIPS",
+            tipsTitle: "Small habits can make a difference",
+            tipsDescription:
+                "General health education for everyday life.",
+
+            tip1Title: "Wash your hands",
+            tip1Text:
+                "Regular hand hygiene can help reduce the spread of many infections.",
+
+            tip2Title: "Eat a balanced diet",
+            tip2Text:
+                "A variety of nutritious foods can support overall health.",
+
+            tip3Title: "Stay active",
+            tip3Text:
+                "Regular physical activity can support physical and mental wellbeing.",
+
+            tip4Title: "Get enough sleep",
+            tip4Text:
+                "Healthy sleep supports learning, mood and general wellbeing.",
+
+            careSmall: "HEALTHCARE FINDER",
+            careTitle: "Find healthcare services",
+            careDescription:
+                "This section can later connect to a real map and verified healthcare database.",
+
+            facilityText:
+                "Add verified healthcare information, services, opening hours and location here.",
+
+            medicineTitle: "Medicine Information",
+            medicineText:
+                "Learn general information about medicines, medication safety and why professional advice is important.",
+
+            medicine1: "💊 Learn what a medicine is generally used for",
+            medicine2: "⚠️ Learn about common safety warnings",
+            medicine3: "👩‍⚕️ Ask a healthcare professional about personal treatment",
+            medicine4: "📖 Read reliable medicine information",
+
+            disclaimerTitle: "⚠️ Important:",
+            disclaimerText:
+                "This website is for general health education and information. It does not replace a doctor, pharmacist or other qualified healthcare professional. For serious symptoms or emergencies, seek appropriate professional medical care.",
+
+            footerDescription:
+                "Making health information easier to understand and access.",
+
+            footerExplore: "Explore",
+            footerHealth: "Health Information",
+            footerCare: "Healthcare Finder",
+            footerMedicine: "Medicine Guide",
+            footerTips: "Health Tips",
+
+            footerLanguages: "Languages",
+            footerImportant: "Important",
+
+            footerDisclaimer:
+                "Health information should come from reliable sources and qualified professionals.",
+
+            rights:
+                "Built for health education and community access."
+
+        },
+
+
+        am: {
+
+            navHome: "መነሻ",
+            navCare: "የጤና አገልግሎት",
+            navEmergency: "የአደጋ ጊዜ",
+            navMedicine: "መድሃኒት",
+            navTips: "የጤና ምክሮች",
+
+            badge: "🇪🇹 የጤና መረጃ ለሁሉም",
+
+            heroLine1: "ጤናዎ።",
+            heroLine2: "መረጃዎ።",
+
+            heroDescription:
+                "የጤና መረጃ፣ የጤና ተቋማት፣ የአደጋ ጊዜ መረጃ፣ ስለ መድሃኒት መረጃ እና የጤና ምክሮችን በአንድ ቦታ ያግኙ።",
+
+            findCare: "የጤና አገልግሎት ፈልግ",
+            learnHealth: "ስለ ጤና ይማሩ",
+
+            heroCardTitle: "የጤና እውቀት ሕይወትን ያድናል።",
+
+            heroCardText:
+                "ይማሩ፣ ይከላከሉ፣ ይዘጋጁ እና የሙያተኛ የጤና እርዳታ መቼ እንደሚያስፈልግ ይወቁ።",
+
+            searchPlaceholder: "የጤና መረጃ ይፈልጉ...",
+            search: "ፈልግ",
+
+            quickSmall: "ፈጣን መዳረሻ",
+            quickTitle: "ምን ያስፈልግዎታል?",
+            quickDescription:
+                "የሚያስፈልግዎትን መረጃ በፍጥነት ያግኙ።",
+
+            card1Title: "የጤና አገልግሎት ፈልግ",
+            card1Text:
+                "ሆስፒታሎች፣ ክሊኒኮች፣ ፋርማሲዎች እና ሌሎች የጤና ተቋማትን ይፈልጉ።",
+
+            card2Title: "የአደጋ ጊዜ እርዳታ",
+            card2Text:
+                "አስፈላጊ የአደጋ ጊዜ መረጃን ያግኙ እና በአስቸኳይ ሁኔታ ምን ማድረግ እንዳለ ይማሩ።",
+
+            card3Title: "የመድሃኒት መመሪያ",
+            card3Text:
+                "ስለ መድሃኒቶች አጠቃላይ መረጃ እና የመድሃኒት ደህንነት ይማሩ።",
+
+            explore: "ይመልከቱ →",
+
+            healthSmall: "የጤና መረጃ",
+            healthTitle: "ስለ ጤናዎ ይማሩ",
+            healthDescription:
+                "ስለ ጤና አስፈላጊ ጉዳዮች ቀላል የትምህርት መረጃ።",
+
+            heartHealth: "የልብ ጤና",
+            lungHealth: "የመተንፈሻ አካላት ጤና",
+            mentalHealth: "የአእምሮ ደህንነት",
+            nutrition: "ምግብና አመጋገብ",
+            dental: "የጥርስ ጤና",
+            eye: "የዓይን ጤና",
+            hygiene: "ንጽህና",
+            infection: "ኢንፌክሽኖች",
+
+            emergencyTitle: "የአደጋ ጊዜ እርዳታ ይፈልጋሉ?",
+            emergencyText:
+                "ከባድ ወይም ሕይወትን አደጋ ላይ በሚጥል ሁኔታ የአካባቢዎን የአደጋ ጊዜ አገልግሎት ያነጋግሩ ወይም ወደ ቅርብ የጤና ተቋም ይሂዱ።",
+
+            emergencyNumberTitle: "የአደጋ ጊዜ መረጃ",
+            verifyNumber: "የአካባቢዎን የአደጋ ጊዜ ቁጥር ያረጋግጡ",
+
+            emergencyWarning:
+                "የአደጋ ጊዜ ቁጥሮች በአካባቢ ሊለያዩ ይችላሉ። ከመጠቀምዎ በፊት ትክክለኛውን ቁጥር ያረጋግጡ።",
+
+            tipsSmall: "የጤና ምክሮች",
+            tipsTitle: "ትንንሽ ልምዶች ትልቅ ለውጥ ሊያመጡ ይችላሉ",
+            tipsDescription:
+                "ለዕለታዊ ሕይወት አጠቃላይ የጤና ትምህርት።",
+
+            tip1Title: "እጅዎን ይታጠቡ",
+            tip1Text:
+                "እጅን በመደበኛነት መታጠብ የብዙ ኢንፌክሽኖችን መስፋፋት ሊቀንስ ይችላል።",
+
+            tip2Title: "የተመጣጠነ ምግብ ይመገቡ",
+            tip2Text:
+                "የተለያዩ ገንቢ ምግቦች ለአጠቃላይ ጤና ይጠቅማሉ።",
+
+            tip3Title: "ንቁ ይሁኑ",
+            tip3Text:
+                "መደበኛ እንቅስቃሴ ለአካላዊና ለአእምሮ ደህንነት ይጠቅማል።",
+
+            tip4Title: "በቂ እንቅልፍ ያግኙ",
+            tip4Text:
+                "ጤናማ እንቅልፍ ለመማር፣ ለስሜት እና ለአጠቃላይ ደህንነት ይጠቅማል።",
+
+            careSmall: "የጤና አገልግሎት ፈላጊ",
+            careTitle: "የጤና አገልግሎቶችን ያግኙ",
+            careDescription:
+                "ይህ ክፍል በኋላ ከእውነተኛ ካርታ እና ከተረጋገጠ የጤና መረጃ ጋር ሊገናኝ ይችላል።",
+
+            facilityText:
+                "የተረጋገጠ የጤና ተቋም መረጃ፣ አገልግሎቶች፣ የስራ ሰዓት እና አድራሻ እዚህ ሊጨመር ይችላል።",
+
+            medicineTitle: "የመድሃኒት መረጃ",
+            medicineText:
+                "ስለ መድሃኒቶች፣ የመድሃኒት ደህንነት እና የሙያተኛ ምክር አስፈላጊነት አጠቃላይ መረጃ ይማሩ።",
+
+            medicine1: "💊 መድሃኒት በአጠቃላይ ለምን እንደሚጠቅም ይማሩ",
+            medicine2: "⚠️ ስለ የደህንነት ማስጠንቀቂያዎች ይማሩ",
+            medicine3: "👩‍⚕️ ስለ ግል ሕክምናዎ የጤና ባለሙያን ያማክሩ",
+            medicine4: "📖 ከታመኑ ምንጮች የመድሃኒት መረጃ ያንብቡ",
+
+            disclaimerTitle: "⚠️ አስፈላጊ:",
+            disclaimerText:
+                "ይህ ድህረ ገጽ ለአጠቃላይ የጤና ትምህርትና መረጃ ብቻ ነው። የዶክተር፣ የፋርማሲስት ወይም የሌላ ብቁ የጤና ባለሙያን ምክር አይተካም።",
+
+            footerDescription:
+                "የጤና መረጃን ለመረዳትና ለማግኘት ቀላል ማድረግ።",
+
+            footerExplore: "ይመልከቱ",
+            footerHealth: "የጤና መረጃ",
+            footerCare: "የጤና አገልግሎት",
+            footerMedicine: "የመድሃኒት መመሪያ",
+            footerTips: "የጤና ምክሮች",
+
+            footerLanguages: "ቋንቋዎች",
+            footerImportant: "አስፈላጊ",
+
+            footerDisclaimer:
+                "የጤና መረጃ ከታመኑ ምንጮችና ከብቁ ባለሙያዎች መምጣት አለበት።",
+
+            rights:
+                "ለጤና ትምህርትና ለማህበረሰብ መዳረሻ የተሰራ።"
+
+        },
+
+
+        om: {
+
+            navHome: "Mana",
+            navCare: "Tajaajila Fayyaa",
+            navEmergency: "Yeroo Hatattamaa",
+            navMedicine: "Qorichawwan",
+            navTips: "Gorsa Fayyaa",
+
+            badge: "🇪🇹 Odeeffannoo fayyaa nama hundaaf",
+
+            heroLine1: "Fayyaa kee.",
+            heroLine2: "Odeeffannoo kee.",
+
+            heroDescription:
+                "Odeeffannoo fayyaa, tajaajila fayyaa, gorsa yeroo hatattamaa, odeeffannoo qorichaa fi gorsa fayyaa bakka tokko irraa argadhu.",
+
+            findCare: "Tajaajila Fayyaa Barbaadi",
+            learnHealth: "Waa'ee Fayyaa Baradhu",
+
+            heroCardTitle: "Beekumsi fayyaa lubbuu baraara.",
+
+            heroCardText:
+                "Baradhu, of eegi, qophaa'i, yoom gargaarsa ogeessa fayyaa barbaaduu akka qabdus beeki.",
+
+            searchPlaceholder: "Odeeffannoo fayyaa barbaadi...",
+            search: "Barbaadi",
+
+            quickSmall: "GARGAARSA ARIFACHIISAA",
+            quickTitle: "Maal barbaadda?",
+            quickDescription:
+                "Odeeffannoo fi tajaajila si barbaachisu saffisaan argadhu.",
+
+            card1Title: "Tajaajila Fayyaa Barbaadi",
+            card1Text:
+                "Hospitaala, kilinika, mana qorichaa fi tajaajila fayyaa biroo barbaadi.",
+
+            card2Title: "Gargaarsa Yeroo Hatattamaa",
+            card2Text:
+                "Odeeffannoo yeroo hatattamaa fi yeroo rakkoo maal gochuu akka qabdu baradhu.",
+
+            card3Title: "Qajeelfama Qorichaa",
+            card3Text:
+                "Odeeffannoo waliigalaa qorichawwan fi nageenya qorichaa baradhu.",
+
+            explore: "Ilaali →",
+
+            healthSmall: "ODEEFFANNOO FAYYAA",
+            healthTitle: "Waa'ee fayyaa kee baradhu",
+            healthDescription:
+                "Odeeffannoo barnootaa salphaa waa'ee dhimma fayyaa barbaachisaa.",
+
+            heartHealth: "Fayyaa Onnee",
+            lungHealth: "Fayyaa Sirna Hargansuu",
+            mentalHealth: "Fayyaa Sammuu",
+            nutrition: "Nyaataa fi Besha",
+            dental: "Fayyaa Ilkaanii",
+            eye: "Fayyaa Ijaa",
+            hygiene: "Qulqullina",
+            infection: "Infekshinii",
+
+            emergencyTitle: "Gargaarsa yeroo hatattamaa barbaaddaa?",
+            emergencyText:
+                "Yeroo rakkoo cimaa ykn lubbuu balaadhaaf saaxilu, tajaajila yeroo hatattamaa naannoo keetii qunnami ykn gara dhaabbata fayyaa dhihoo deemi.",
+
+            emergencyNumberTitle: "Odeeffannoo yeroo hatattamaa",
+            verifyNumber: "Lakkoofsa yeroo hatattamaa naannoo kee mirkaneeffadhu",
+
+            emergencyWarning:
+                "Lakkoofsi yeroo hatattamaa bakka garaagaraatti garaagarummaa qabaachuu danda'a. Itti fayyadamuu kee dura lakkoofsa sirrii mirkaneeffadhu.",
+
+            tipsSmall: "GORSA FAYYAA",
+            tipsTitle: "Amaloota xixiqqoon garaagarummaa guddaa fiduu danda'u",
+            tipsDescription:
+                "Barnoota fayyaa waliigalaa jireenya guyyaa guyyaaf.",
+
+            tip1Title: "Harka kee dhiqadhu",
+            tip1Text:
+                "Harka yeroo yeroon dhiqachuun babal'ina infekshinii hedduu hir'isuu danda'a.",
+
+            tip2Title: "Nyaata madaalawaa nyaadhu",
+            tip2Text:
+                "Nyaata garaagaraa fi qaamaaf barbaachisaa ta'e nyaachuun fayyaa waliigalaa deeggaruu danda'a.",
+
+            tip3Title: "Sochii qaamaa godhi",
+            tip3Text:
+                "Sochii qaamaa yeroo yeroon gochuun fayyaa qaamaa fi sammuu deeggaruu danda'a.",
+
+            tip4Title: "Hirriba gahaa argadhu",
+            tip4Text:
+                "Hirribni gaariin barachuu, miira fi fayyaa waliigalaa deeggera.",
+
+            careSmall: "BARBAACHISA TAAJILA FAYYAA",
+            careTitle: "Tajaajila fayyaa barbaadi",
+            careDescription:
+                "Kutaan kun gara fuulduraatti kaartaa fi kuusdeetaa tajaajila fayyaa mirkanaa'e waliin walqabachuu danda'a.",
+
+            facilityText:
+                "Odeeffannoo dhaabbata fayyaa mirkanaa'e, tajaajila, sa'aatii hojii fi bakka isaa asitti dabali.",
+
+            medicineTitle: "Odeeffannoo Qorichaa",
+            medicineText:
+                "Odeeffannoo waliigalaa qorichawwan, nageenya qorichaa fi barbaachisummaa gorsa ogeessa fayyaa baradhu.",
+
+            medicine1: "💊 Qorichi tokko waliigalaan maalif akka oolu baradhu",
+            medicine2: "⚠️ Waa'ee akeekkachiisa nageenyaa baradhu",
+            medicine3: "👩‍⚕️ Waa'ee yaala dhuunfaa kee ogeessa fayyaa mari'adhu",
+            medicine4: "📖 Odeeffannoo qorichaa madda amanamaa irraa dubbisi",
+
+            disclaimerTitle: "⚠️ Barbaachisaa:",
+            disclaimerText:
+                "Weebsaayitiin kun barnoota fi odeeffannoo fayyaa waliigalaatiif qofa. Gorsa doktoraa, farmasistii ykn ogeessa fayyaa biroo bakka hin bu'u. Mallattoo cimaa ykn yeroo hatattamaa keessatti gargaarsa ogeessa fayyaa barbaadi.",
+
+            footerDescription:
+                "Odeeffannoo fayyaa hubachuu fi argachuun akka salphatu gochuu.",
+
+            footerExplore: "Qoradhu",
+            footerHealth: "Odeeffannoo Fayyaa",
+            footerCare: "Tajaajila Fayyaa",
+            footerMedicine: "Qajeelfama Qorichaa",
+            footerTips: "Gorsa Fayyaa",
+
+            footerLanguages: "Afaanota",
+            footerImportant: "Barbaachisaa",
+
+            footerDisclaimer:
+                "Odeeffannoon fayyaa madda amanamaa fi ogeeyyii fayyaa irraa argamuu qaba.",
+
+            rights:
+                "Barnoota fayyaa fi tajaajila hawaasaaf kan hojjetame."
+
+        }
+
+    };
+
+
+    /* ============================================
+       LANGUAGE SYSTEM
+    ============================================ */
+
+    const languageSelect =
+        document.getElementById("languageSelect");
+
+    function changeLanguage(language) {
+
+        const selected = translations[language];
+
+        document.querySelectorAll("[data-i18n]").forEach(element => {
+
+            const key = element.getAttribute("data-i18n");
+
+            if (selected[key]) {
+                element.textContent = selected[key];
+            }
+
+        });
+
+
+        document.querySelectorAll("[data-placeholder]").forEach(element => {
+
+            const key = element.getAttribute("data-placeholder");
+
+            if (selected[key]) {
+                element.placeholder = selected[key];
+            }
+
+        });
+
+
+        document.documentElement.lang = language;
+
+        localStorage.setItem("afyaLanguage", language);
+
+    }
+
+
+    languageSelect.addEventListener("change", function () {
+
+        changeLanguage(this.value);
+
+    });
+
+
+    /* ============================================
+       LOAD SAVED LANGUAGE
+    ============================================ */
+
+    const savedLanguage =
+        localStorage.getItem("afyaLanguage") || "en";
+
+    languageSelect.value = savedLanguage;
+
+    changeLanguage(savedLanguage);
+
+
+    /* ============================================
+       DARK MODE
+    ============================================ */
+
+    const themeBtn =
+        document.getElementById("themeBtn");
+
+    const savedTheme =
+        localStorage.getItem("afyaTheme");
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark");
+        themeBtn.textContent = "☀️";
+
+    }
+
+
+    themeBtn.addEventListener("click", function () {
+
+        document.body.classList.toggle("dark");
+
+        const dark =
+            document.body.classList.contains("dark");
+
+        localStorage.setItem(
+            "afyaTheme",
+            dark ? "dark" : "light"
+        );
+
+        themeBtn.textContent =
+            dark ? "☀️" : "🌙";
+
+    });
+
+
+    /* ============================================
+       MOBILE MENU
+    ============================================ */
+
+    const menuBtn =
+        document.getElementById("menuBtn");
+
+    const navigation =
+        document.getElementById("navigation");
+
+    menuBtn.addEventListener("click", function () {
+
+        navigation.classList.toggle("active");
+
+    });
+
+
+    document.querySelectorAll("nav a").forEach(link => {
+
+        link.addEventListener("click", function () {
+
+            navigation.classList.remove("active");
+
+        });
+
+    });
+
+
+    /* ============================================
+       SEARCH
+    ============================================ */
+
+    function searchHealth() {
+
+        const input =
+            document.getElementById("searchInput");
+
+        const query =
+            input.value.trim().toLowerCase();
+
+        if (!query) {
+
+            alert(
+                "Please enter a health topic to search."
+            );
+
+            return;
+
+        }
+
+        const keywords = {
+
+            heart: "#information",
+            cardiac: "#information",
+            medicine: "#medicine",
+            pharmacy: "#care",
+            hospital: "#care",
+            emergency: "#emergency",
+            health: "#information",
+            nutrition: "#tips",
+            sleep: "#tips",
+            hygiene: "#tips",
+            infection: "#information"
+
+        };
+
+        let destination = "#information";
+
+        for (const word in keywords) {
+
+            if (query.includes(word)) {
+
+                destination = keywords[word];
+                break;
+
+            }
+
+        }
+
+        window.location.href = destination;
+
+    }
+
+
+    document
+        .getElementById("searchInput")
+        .addEventListener("keydown", function(event) {
+
+            if (event.key === "Enter") {
+
+                searchHealth();
+
+            }
+
+        });
+
+
+</script>
+
+</body>
+</html>
